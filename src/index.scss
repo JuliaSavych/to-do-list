@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico|Rochester');
+
+$bg-color: #757575;
+$white: #fff;
+$h2-font: 'Rochester', cursive;
+$main-font: 'Open Sans Condensed', sans-serif;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: $main-font;
+  font-size: 16px;
+}
+
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-holder {
+  background-color: #00BCD4;
+  width: 600px;
+  height: calc(100vh - 30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 15px;
+  padding: 20px 20px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    background-color: #009688;
+    z-index: 2
+  }
+  // &:before {
+  //   content: '';
+  //   background: #009688;
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+  //   border-top-right-radius: 45%;
+  //   border-top-left-radius: 45%;
+  //   width: 60px;
+  //   height: 40px;
+  //   transform: rotate(-45deg) translateX(5px) translateY(-3px);
+  // }
+}
+
+main {
+  position: relative;
+  background-color: $white;
+  width: 100%;
+  height: calc(100% - 30px);
+  padding: 30px 10px;
+  &>button {
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 40px;
+    height: 40px;
+    background: #009688;
+    border-radius: 50%;
+    border: 1px solid $white;
+    cursor: pointer;
+    outline: none;
+    font-size: 30px;
+    color: $white;
+    transition: .3s ease all;
+    &:hover {
+      background-color: #08544d;
+    }
+  }
+}
+
+h2.subheading {
+  position: absolute;
+  top: -17px;
+  left: 14px;
+  background: $white;
+  color: #212121;
+  z-index: 2;
+  padding: 0 15px;
+  width: auto;
+  transition: .3s ease all;
+  font-family: $h2-font;
+  font-size: 26px;
+  cursor: pointer;
+  &:hover {
+    color: #757575;
+  }
+}
+
+.list-done {
+  border-bottom: 1px solid #009688;
+} 
+
+.input-holder {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #B2EBF2;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  transition: .3s ease all;
+  animation-name: input-animation;
+  animation-delay: .3s;
+  h3 {
+    font-size: 18px;
+    color: $white;
+    margin-bottom: 15px;
+  }
+  input {
+    margin-bottom: 15px;
+    padding: 5px;
+    outline: 1px dashed #009688;
+    border-radius: 3px;
+    border: none;
+    &::placeholder {
+      font-size: 8px;
+    }
+  }
+  button {
+    background-color: #009688;
+    color: $white;
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 70px;
+    cursor: pointer;
+    font-size: 13px;
+    &:hover {
+      background-color: #08544d;
+    }
+  }
+  button[type="button"]:disabled {
+    background-color: #757575;
+  }
+}
+
+@keyframes input-animation {
+  0% {opacity: 0;}
+  50% {opacity: 0.5;}
+  100% {opacity: 1;}
+}
