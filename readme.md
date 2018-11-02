@@ -6,7 +6,7 @@ Data are stored encrypted in HTML5 localStorage...
 ### Teacher: 
 ### Front-end stream on [Facebook](https://www.facebook.com/groups/270300106928894/)
 
-### This app was built using [GitHub Pages](https://juliasavych.github.io/dotolist/).
+### This app was built using [GitHub Pages](https://juliasavych.github.io/to-do-list/).
 
 
 
