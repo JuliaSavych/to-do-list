@@ -52,27 +52,15 @@ body {
     background-color: #009688;
     z-index: 2
   }
-  // &:before {
-  //   content: '';
-  //   background: #009688;
-  //   position: absolute;
-  //   bottom: 0;
-  //   right: 0;
-  //   border-top-right-radius: 45%;
-  //   border-top-left-radius: 45%;
-  //   width: 60px;
-  //   height: 40px;
-  //   transform: rotate(-45deg) translateX(5px) translateY(-3px);
-  // }
 }
 
-main {
+main.main {
   position: relative;
   background-color: $white;
   width: 100%;
   height: calc(100% - 30px);
   padding: 30px 10px;
-  &>button {
+  button.show-input {
     position: absolute;
     bottom: -12px;
     right: -12px;
@@ -89,6 +77,17 @@ main {
     &:hover {
       background-color: #08544d;
     }
+  }
+  button.clear-all {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    width: 15px;
+    height: 15px;
+    color: red;
+    outline: none;
   }
 }
 
@@ -130,7 +129,7 @@ h2.subheading {
   animation-name: input-animation;
   animation-delay: .3s;
   h3 {
-    font-size: 18px;
+    font-size: 21px;
     color: $white;
     margin-bottom: 15px;
   }
@@ -167,3 +166,64 @@ h2.subheading {
   50% {opacity: 0.5;}
   100% {opacity: 1;}
 }
+
+.list-holder {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+ul.task-list {
+    li {
+      list-style: none;
+      margin: 10px;
+      border-bottom: 1px solid #bfbfc0;
+      display: flex;
+      justify-content: space-between;
+      .list-item {
+        position: relative;
+        flex-grow: 3;
+        input {
+          transition: .3s ease all;
+          &:before {
+            content: '';
+            background: #757575;
+            height: 2px;
+            width: 0%;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            right: 0;
+            bottom: 0;
+            transition: .3s ease all;
+          }
+        }
+        input[type="checkbox"]:checked {
+          transition: .5s ease all;
+          &:before {
+            content: '';
+            background: #757575;
+            height: 2px;
+            width: 96%;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            right: 0;
+            bottom: 0;
+            transition: .3s ease all;
+          }
+        }
+        span {
+          color: #000000;
+          font-size: 18px;
+        }
+      }
+      .icons {
+        color: #757575;
+        &>*{
+          margin-right: 8px;
+          font-size: 18px;
+          cursor: pointer;
+        }
+      }
+    }
+  }

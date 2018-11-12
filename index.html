@@ -5,34 +5,27 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link type="text/js" href="src/src.js">
   <title>To do list</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
-
   <div class="wrapper">
     <section class="app-holder">
-      <main class="">
+      <main class="main">
+        <button id="clear-all" class="clear-all">X</button>
         <h2 class="subheading">To do list</h2>
-
-        <div class="list-done">
-          <ul class="list" id="done"></ul>
+        <div class="list-holder">
+          <ul class="task-list" id="taskList"></ul>
         </div>
-
-        <div class="list-in-progress">
-          <ul class="list" id="not-done"></ul>
-          
-        </div>
-        <button id="show-input" > + </button>
+        <button id="show-input" class="show-input"> + </button>
         <section class="input-holder" id="input-holder">
         <h3>Create a new item</h3>
-        <input id="item-input" type="text" placeholder="Please, write your super task here..." \>
+        <input id="input" type="text" placeholder="Please, write your super task here..." \>
         <button id="save" type="button" disabled> Save </button>
       </section>
       </main>
-    </section>
-    
+    </section> 
   </div>
-  <script src="src/src.js"></script>
 </body>
+<script src="./src/index.js"></script>
 </html>
